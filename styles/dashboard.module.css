@@ -1,0 +1,193 @@
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+.container h1 {
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  color: #111;
+}
+
+.container h2 {
+  font-size: 1.8rem;
+  margin-top: 40px;
+  margin-bottom: 20px;
+  color: #222;
+}
+
+.section {
+  margin-bottom: 50px;
+}
+
+.themeGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.themeCard {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 25px;
+  border-radius: 10px;
+  color: white;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.themeCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+}
+
+.themeCard h3 {
+  margin: 0 0 10px 0;
+  font-size: 1.3rem;
+}
+
+.count {
+  margin: 0;
+  font-size: 0.95rem;
+  opacity: 0.9;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.table thead {
+  background: #f5f5f5;
+}
+
+.table th,
+.table td {
+  padding: 15px 20px;
+  text-align: left;
+  border-bottom: 1px solid #eee;
+}
+
+.table th {
+  font-weight: 600;
+  color: #333;
+}
+
+.table tbody tr:hover {
+  background: #f9f9f9;
+}
+
+.negative {
+  color: #d32f2f;
+  font-weight: 500;
+}
+
+.positive {
+  color: #388e3c;
+  font-weight: 500;
+}
+
+.recommendationList {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.recommendationCard {
+  background: white;
+  border-left: 5px solid #667eea;
+  padding: 25px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  transition: box-shadow 0.3s ease;
+}
+
+.recommendationCard:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+.recommendationCard h3 {
+  margin: 0 0 15px 0;
+  color: #111;
+  font-size: 1.2rem;
+}
+
+.recommendationCard p {
+  margin: 0 0 10px 0;
+  color: #555;
+  line-height: 1.6;
+}
+
+.impact {
+  margin-top: 15px;
+  padding-top: 15px;
+  border-top: 1px solid #eee;
+  font-size: 0.95rem;
+}
+
+.feedbackList {
+  display: grid;
+  gap: 15px;
+}
+
+.feedbackCard {
+  background: white;
+  border: 1px solid #e0e0e0;
+  padding: 20px;
+  border-radius: 8px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feedbackCard:hover {
+  border-color: #667eea;
+  box-shadow: 0 2px 8px rgba(102, 126, 234, 0.1);
+}
+
+.feedbackCard p {
+  margin: 0;
+  color: #333;
+  line-height: 1.6;
+}
+
+.source {
+  color: #667eea;
+  font-weight: 600;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  margin-bottom: 8px !important;
+}
+
+@media (max-width: 768px) {
+  .container h1 {
+    font-size: 2rem;
+  }
+
+  .container h2 {
+    font-size: 1.5rem;
+  }
+
+  .container {
+    padding: 20px;
+  }
+
+  .themeGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .recommendationList {
+    grid-template-columns: 1fr;
+  }
+
+  .table {
+    font-size: 0.9rem;
+  }
+
+  .table th,
+  .table td {
+    padding: 10px 15px;
+  }
+}
