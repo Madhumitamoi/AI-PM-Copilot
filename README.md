@@ -28,10 +28,22 @@ npm run dev
 
 API endpoints
 
-- `POST /api/feedback` — ingest feedback JSON { source, content, metadata }
-- `GET /api/themes` — detect themes (stub)
+- `POST /api/feedback` — ingest feedback JSON `{ source, content, metadata }`
+- `GET /api/themes` — detect themes from recent feedback
+- `GET /api/insights` — product themes, metric mappings, and prioritization recommendations
+- `POST /api/prd` — generate PRD JSON from a theme and product hypothesis
+
+OpenAI integration
+
+- Set `OPENAI_API_KEY` in `.env`
+- Theme detection uses `llm/openai_client.js` to extract product themes
+
+Vector store pattern
+
+- `lib/vector_store.js` shows a Postgres-based vector storage design
+- Requires the `pgvector` extension for the nearest-neighbor operator in Postgres
 
 Next steps
 
-- Hook real LLM and vector search providers in `llm/` and `vector/`
+- Add real vector ingestion and search flows
 - Add authentication and background workers for heavy processing
