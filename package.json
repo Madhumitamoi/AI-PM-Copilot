@@ -1,0 +1,20 @@
+{
+  "name": "ai-product-manager-copilot",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "migrate": "psql \"$DATABASE_URL\" -f migrations/001_init.sql || true",
+    "seed": "node scripts/seed.js"
+  },
+  "dependencies": {
+    "next": "14.2.0",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "pg": "8.11.0",
+    "dotenv": "16.3.1",
+    "uuid": "9.0.0"
+  }
+}
