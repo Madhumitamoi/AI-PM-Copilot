@@ -1,0 +1,66 @@
+name: CI/CD
+
+on:
+  push:
+    branches: [main, develop]
+  pull_request:
+    branches: [main, develop]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    services:
+      postgres:
+        image: postgres:15
+        env:
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: postgres
+          POSTGRES_DB: engine_test
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+        ports:
+          - 5432:5432
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build Next.js
+        run: npm run build
+
+      - name: Run unit tests
+        run: npm test
+
+      - name: Setup database
+        env:
+          DATABASE_URL: postgres://postgres:postgres@localhost:5432/engine_test
+        run: |
+          psql -h localhost -U postgres -d engine_test -c "CREATE EXTENSION IF NOT EXISTS pgvector"
+          psql -h localhost -U postgres -d engine_test -f migrations/001_init.sql
+
+      - name: Run integration tests (skip if no OpenAI key)
+        env:
+          DATABASE_URL: postgres://postgres:postgres@localhost:5432/engine_test
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+        run: |
+          if [ -z "$OPENAI_API_KEY" ]; then
+            echo "OPENAI_API_KEY not set, skipping integration tests"
+          else
+            npm run test:integration
+          fi
+
+      - name: Upload coverage (optional)
+        uses: codecov/codecov-action@v3
+        if: always()
