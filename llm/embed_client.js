@@ -1,16 +1,24 @@
-const { Configuration, OpenAIApi } = require('openai');
+const OpenAI = require('openai');
 const dotenv = require('dotenv');
 dotenv.config();
 
-const configuration = new Configuration({ apiKey: process.env.OPENAI_API_KEY });
-const client = new OpenAIApi(configuration);
+let client = null;
+function getClient() {
+  if (!client) {
+    if (!process.env.OPENAI_API_KEY) {
+      throw new Error('OPENAI_API_KEY is required for OpenAI calls.');
+    }
+    client = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
+  }
+  return client;
+}
 
 async function createEmbedding(text) {
-  const response = await client.createEmbedding({
+  const response = await getClient().embeddings.create({
     model: 'text-embedding-3-large',
     input: text
   });
-  return response.data?.data?.[0]?.embedding || [];
+  return response.data?.[0]?.embedding || [];
 }
 
 module.exports = { createEmbedding };

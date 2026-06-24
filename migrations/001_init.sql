@@ -20,3 +20,12 @@ CREATE TABLE IF NOT EXISTS metrics (
   value DOUBLE PRECISION,
   updated_at TIMESTAMPTZ DEFAULT now()
 );
+
+CREATE TABLE IF NOT EXISTS vectors (
+  id UUID PRIMARY KEY,
+  source TEXT,
+  content TEXT,
+  embedding DOUBLE PRECISION[],
+  metadata JSONB DEFAULT '{}',
+  created_at TIMESTAMPTZ DEFAULT now()
+);
