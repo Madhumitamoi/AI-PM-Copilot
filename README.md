@@ -1,4 +1,4 @@
-# Product
+# Customer Insight AI Copilot Engine
 
 An AI-powered platform that aggregates customer feedback (reviews, Reddit, support tickets), detects themes, maps them to business metrics, prioritizes fixes, and auto-generates product requirement documents (PRDs).
 
