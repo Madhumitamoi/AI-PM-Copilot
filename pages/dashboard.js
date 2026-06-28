@@ -37,7 +37,7 @@ export default function Dashboard() {
 
   return (
     <div className={styles.container}>
-      <h1>AI Product Manager Copilot</h1>
+      <h1>Product</h1>
       
       {insights && (
         <>

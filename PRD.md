@@ -1,4 +1,4 @@
-# Product Requirements Document: AI Product Manager Copilot
+# Product Requirements Document
 
 **Version:** 1.0  
 **Date:** June 2026  
@@ -9,7 +9,7 @@
 
 ## 1. Executive Summary
 
-The **AI Product Manager Copilot** is an intelligent platform that democratizes product management by automating the feedback-to-insight pipeline. It aggregates customer feedback from multiple sources, detects actionable themes using AI, maps themes to business metrics, recommends prioritized improvements, and auto-generates product requirement documents—reducing the manual work of product managers by **70-80%** and enabling data-driven decision-making at scale.
+The **Product** is an intelligent platform that democratizes product management by automating the feedback-to-insight pipeline. It aggregates customer feedback from multiple sources, detects actionable themes using AI, maps themes to business metrics, recommends prioritized improvements, and auto-generates product requirement documents—reducing the manual work of product managers by **70-80%** and enabling data-driven decision-making at scale.
 
 **Key Promise:** Turn raw customer feedback into prioritized, documented product initiatives in minutes instead of weeks.
 
@@ -63,9 +63,9 @@ The **AI Product Manager Copilot** is an intelligent platform that democratizes 
 
 ## 4. Competitive Differentiation
 
-### How AI Product Manager Copilot Stands Out
+### How the Product Stands Out
 
-| Feature | AI PM Copilot | Competitor A (Canny) | Competitor B (Traction) | Competitor C (Aha!) |
+| Feature | Product | Competitor A (Canny) | Competitor B (Traction) | Competitor C (Aha!) |
 |---------|---------------|----------------------|------------------------|---------------------|
 | **Multi-source aggregation** | ✅ Reviews, Reddit, tickets, emails, surveys | ✅ Public feedback boards | ✅ GitHub issues, feedback widgets | ❌ Requires manual input |
 | **AI theme detection** | ✅ GPT-4 powered, real-time | ❌ Manual categorization | ✅ Basic ML rules | ✅ Moderate ML |
@@ -295,13 +295,13 @@ Customer Feedback Sources
 
 **Scenario: Mid-size SaaS (3 PMs, 15 engineers)**
 
-**Without AI PM Copilot:**
+**Without Product:**
 - PMs analyze 300 feedback items/month manually → ~50 hours
 - Create 4 PRDs → ~32 hours
 - Prioritize backlog (meetings, debates) → ~16 hours
 - Total: 98 PM hours/month = 1.2 FTE
 
-**With AI PM Copilot:**
+**With Product:**
 - AI analyzes 300 feedback items → ~3 hours (PM review)
 - Auto-generates 4 PRDs → ~1 hour (editing/polish)
 - Prioritization data-driven → ~4 hours (validation)
@@ -435,7 +435,7 @@ Customer Feedback Sources
 
 ## 15. Conclusion
 
-The **AI Product Manager Copilot** solves a critical pain point for product teams: converting unstructured customer feedback into actionable, prioritized, documented initiatives. By automating 70-80% of manual feedback analysis work, it enables PMs to focus on strategic thinking while improving prioritization accuracy from ~50% (gut feel) to 90%+ (data-driven).
+The **Product** solves a critical pain point for product teams: converting unstructured customer feedback into actionable, prioritized, documented initiatives. By automating 70-80% of manual feedback analysis work, it enables PMs to focus on strategic thinking while improving prioritization accuracy from ~50% (gut feel) to 90%+ (data-driven).
 
 The product is:
 - ✅ **Differentiated** - Only end-to-end solution with metrics mapping + auto-PRD

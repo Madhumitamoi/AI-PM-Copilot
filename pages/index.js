@@ -6,7 +6,7 @@ export default function Home() {
   return (
     <main className={styles.main}>
       <div className={styles.hero}>
-        <h1>AI Product Manager Copilot</h1>
+        <h1>Product</h1>
         <p>Aggregate feedback, detect themes, prioritize fixes, and auto-generate PRDs</p>
       </div>
 
